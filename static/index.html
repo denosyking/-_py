@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Digital Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-back" id="header-back" style="display:none">
+        <button class="btn-icon" onclick="App.goBack()" id="icon-back"></button>
+      </div>
+      <h1 class="header-title" id="header-title">Digital Store</h1>
+      <div class="header-actions">
+        <button class="btn-icon" id="search-toggle" onclick="App.toggleSearch()"></button>
+      </div>
+    </header>
+
+    <!-- Toast container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Main content -->
+    <main class="main-content" id="main-content">
+      <!-- Loading skeleton -->
+      <div id="loading-screen" class="loading-screen">
+        <div class="spinner"></div>
+        <div class="text-muted text-sm">Загрузка...</div>
+      </div>
+
+      <!-- Catalog View -->
+      <div class="view" id="view-catalog">
+        <div class="search-bar" style="display:none" id="catalog-search-bar">
+          <div class="search-icon" id="icon-search-bar"></div>
+          <input type="text" class="search-input" id="search-input" placeholder="Поиск товаров...">
+        </div>
+        <div class="categories-wrapper scroll-horizontal" id="categories-container"></div>
+        <div class="products-grid" id="products-container"></div>
+      </div>
+
+      <!-- Cart View -->
+      <div class="view" id="view-cart"></div>
+
+      <!-- Orders View -->
+      <div class="view" id="view-orders"></div>
+
+      <!-- Profile View -->
+      <div class="view" id="view-profile"></div>
+
+      <!-- Admin View -->
+      <div class="view" id="view-admin"></div>
+
+      <!-- Product Detail (overlay) -->
+      <div class="view product-detail-view" id="view-product-detail"></div>
+
+      <!-- Order Detail (overlay) -->
+      <div class="view order-detail-view" id="view-order-detail"></div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav" id="bottom-nav"></nav>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal" id="modal">
+        <div class="modal-header">
+          <h3 class="modal-title" id="modal-title"></h3>
+          <button class="btn-icon" onclick="App.closeModal()" id="icon-modal-close"></button>
+        </div>
+        <div class="modal-body" id="modal-body"></div>
+        <div class="modal-footer" id="modal-footer"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/icons.js"></script>
+  <script src="/js/store.js"></script>
+  <script src="/js/cart.js"></script>
+  <script src="/js/orders.js"></script>
+  <script src="/js/admin.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
