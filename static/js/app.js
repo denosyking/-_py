@@ -282,7 +282,7 @@ window.App = {
           </div>
         </div>
         
-        <button class="btn btn-secondary btn-block btn-lg" onclick="window.Telegram?.WebApp?.openTelegramLink('https://t.me/denis')">
+        <button class="btn btn-secondary btn-block btn-lg" onclick="window.Telegram?.WebApp?.openTelegramLink('https://t.me/denis_jj')">
           ${window.Icons.messageCircle ? window.Icons.messageCircle(20) : window.Icons.user(20)}
           Связаться с поддержкой
         </button>
