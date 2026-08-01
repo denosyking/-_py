@@ -282,12 +282,22 @@ window.App = {
           </div>
         </div>
         
-        <button class="btn btn-secondary btn-block btn-lg" onclick="window.Telegram?.WebApp?.openTelegramLink('https://t.me/denis_jj')">
+        <button class="btn btn-secondary btn-block btn-lg" onclick="App.openSupport()">
           ${window.Icons.messageCircle ? window.Icons.messageCircle(20) : window.Icons.user(20)}
           Связаться с поддержкой
         </button>
       </div>
     `;
+  },
+
+  openSupport() {
+    const url = 'https://t.me/denis_jj';
+    if (window.Telegram?.WebApp?.openTelegramLink) {
+      window.Telegram.WebApp.openTelegramLink(url);
+    } else {
+      window.open(url, '_blank');
+    }
+  }
   }
 };
 
